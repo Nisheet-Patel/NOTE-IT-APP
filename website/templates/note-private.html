@@ -1,0 +1,40 @@
+{% extends 'main-layout.html' %}
+
+{% block title %}Note{% endblock title%}
+
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='PNoteStyle.css')}}">
+    <!-- Scripts -->
+    <script src="{{url_for('static', filename='Copy.js')}}"></script>
+{% endblock head %}
+
+{% block body %}
+    <div id="flex-box">
+        <div id="main-container">
+            <div class="header-container">
+                <a href="/notes">
+                    <span class="iconify back-icon" data-icon="eva:arrow-ios-back-fill" id="back-icon-button" data-width="38" data-height="38"></span>
+                </a>
+                <div id="username-date">{{ note.update_date }}</div>
+            </div>
+
+            <div class="body-container">
+                <div id="note-title">{{ note.title }}</div>
+                <div id="note-body">{{ note.body }}</div>
+            </div>
+
+            <div class="footer-container">
+                <div class="left-icon">
+                    {% if note.is_public == 1 %}
+                    <button id="public-icon-button" onclick="copyToClipboard('public/{{note_key}}')"><span class="iconify public-icon" data-icon="fluent:people-32-regular" data-width="32"></span></button>
+                    {% endif %}
+                    <a href="/delete/{{ note.note_id }}"><span class="iconify delete-icon"  data-icon="ic:baseline-delete-outline" data-width="32"></span></a>
+                    <a href="/edit-note/{{ note.note_id }}"><span class="iconify edit-icon" data-icon="eva:edit-2-outline" data-width="32"></span></a>
+                </div>
+                <div class="right-icon">
+                    <span class="iconify copy-icon" data-icon="ri:file-copy-2-line" data-width="32"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

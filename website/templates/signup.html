@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTE IT - SIGN UP</title>
+
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='Login-Signup-Style.css')}}">
+
+    <!-- FONTs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- ROBOTO MONO FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <!-- ROBOTO FONT-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600;700&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+</head>
+  <body>
+
+      <div class="form-container">
+
+        <form action="">
+          <a href="#"><div class="main-title horizontal-align"> NOTE IT </div></a>
+          
+          <!-- <div class="error-message">
+            Please check your login details and try again.
+          </div> -->
+
+          <div>
+            <div class="text">USERNAME</div>
+            <input type="text" name="username" id="Username" class="input-field horizontal-align"/>
+          </div>
+          
+          <div>
+            <div class="text">PASSWORD</div>
+            <input type="password" name="password" id="Password" class="input-field horizontal-align"/>
+          </div>
+
+          <div>
+            <div class="text">RE-TYPE PASSWORD</div>
+            <input type="password" name="re-password" id="re-Password" class="input-field horizontal-align"/>
+          </div>
+
+          <button id="submit-btn" class="horizontal-align" type="submit">SIGN UP</button>
+
+          <div class="new-user-link horizontal-align">
+            <a href="#" >Already Have An Account?</a>
+          </div>
+          
+        </form>
+
+      </div>
+  </body>
+</html>

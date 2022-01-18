@@ -1,0 +1,122 @@
+body{
+    height: 100vh;
+    background: linear-gradient(116.82deg, #65C7F7 20.83%, #0052D4 100%);
+    margin: 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#flex-box{
+    display: flex;
+    justify-content: center;
+}
+
+#main-container{
+    height: 560px;
+    width: 725px;
+    background: white;
+    box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 30px;
+}
+
+/* Header Container */
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    height: 46px;
+    align-items: center;
+    background: #FEFFB9;
+    border-radius: 5px;
+}
+.header-container a{
+    color: black;
+    text-decoration: none;
+}
+.header-container a:visited{
+    color: black;
+}
+#username-date{
+    margin-right: 19px;
+}
+
+#back-icon-button{
+    margin-left: 5px;
+}
+
+
+
+/* Body Container */
+#note-title{
+    margin-top: 10px;
+    margin-left: 29px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#note-body{
+    margin-top: 17px;
+    margin-left: 29px;
+    margin-right: 48px;
+    height: 380px;
+}
+
+
+
+/* Footer Container */
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-container a{
+    color: black;
+    text-decoration: none;
+}
+
+.footer-container a:visited{
+    color: black;
+}
+
+
+.left-icon{
+    margin-left: 19px;
+}
+
+.right-icon{
+    margin-right: 19px;
+}
+
+
+.public-icon:hover{
+    color: #0052D4;
+    transition: 0.3s;
+}
+
+.delete-icon:hover{
+    color: rgb(255, 43, 43);
+    transition: 0.3s;
+}
+
+.edit-icon:hover{
+    color: rgb(48, 206, 48);
+    transition: 0.3s;
+}
+
+.copy-icon:hover{
+    color: #0052D4;
+    transition: 0.3s;
+}
+
+.back-icon:hover{
+    color: rgb(71, 71, 71);
+    transition: 0.3s;
+}
+
+#public-icon-button{
+    background-color: white;
+    border: none;
+    padding: 0px;
+}

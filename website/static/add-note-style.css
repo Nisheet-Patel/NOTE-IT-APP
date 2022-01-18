@@ -1,0 +1,127 @@
+body{
+    height: 100vh;
+    background: linear-gradient(116.82deg, #65C7F7 20.83%, #0052D4 100%);
+    margin: 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+}
+
+.add-note-form-box{
+    width: 850px;
+    height: 700px;
+    background-color: white;
+    box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Roboto Mono', monospace;
+}
+
+form{
+    font-family: 'Roboto Mono', monospace;;
+}
+
+.new-note-title{
+    font-weight: bold;
+    font-size: 48px;
+    text-align: center;
+    margin: 20px 0px;
+    color: #1D9BD9;
+}
+
+#note-titles{
+    font-size: 18px;
+    color: #393939;
+    margin-left: 75px;
+    margin-bottom: 5px;
+}
+
+#note-title-input{
+    padding-left: 10px;
+    background: #EAEAEA;
+    border-radius: 5px;
+    font-size: x-large;
+    height: 50px;
+    width: 700px;
+    border: none;
+    margin: auto;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+#note-body-input{
+    resize: none;
+    padding-left: 10px;
+    padding-top: 10px;
+    background: #EAEAEA;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+
+.check-box{
+    margin-left: 70px;
+    color: #393939;
+}
+
+#add-note-button{
+    margin-right: 70px;
+    width: 140px;
+    height: 50px;
+    font-size: 30px;
+    background: #34BCFF;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+
+#add-note-button:hover{
+    color: rgb(32, 226, 32);
+    background: white;
+    border: 1px solid rgb(32, 226, 32);
+    transition: 0.3s;
+}
+
+#cancle-note-button{
+    margin-right: 10px;
+    width: 140px;
+    height: 50px;
+    font-size: 30px;
+    background: #34BCFF;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+#cancle-note-button:hover{
+    color: rgb(255, 43, 43);
+    background: white;
+    border: 1px solid rgb(255, 43, 43);
+    transition: 0.3s;
+}
+
+/* Parent CSS */
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-border{
+    outline: 0;
+}
+
+.horizontal-align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;  
+}

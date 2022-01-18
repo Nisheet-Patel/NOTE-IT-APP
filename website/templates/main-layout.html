@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} NOTE IT {% endblock title %}</title>
+    
+    <!-- ICONs -->
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{url_for('static', filename='Main-Page-NavStyle.css')}}">
+    <!-- FONTs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- ROBOTO MONO FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <!-- ROBOTO FONT-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600;700&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+    {% block head %} {% endblock head %}
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="main-title">
+            <a href="/">Note it</a>
+        </div>
+        <div class="mid-options">
+            <a href="/add-note">New Note</a>
+            <a href="/shared">Shared</a>
+            <a href="/">About</a>
+        </div>
+        <div class="main-logout">
+            <a href="/">Logout</a>
+        </div>
+    </nav>
+
+    {% block body %} {% endblock body %}
+
+</body>
+</html>

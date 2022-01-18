@@ -1,0 +1,51 @@
+body{
+    height: 100vh;
+    background: linear-gradient(116.82deg, #65C7F7 20.83%, #0052D4 100%);
+    margin: 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.notes-container{
+    display: grid;
+    margin: 0%;
+}
+
+.note-body{
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 10px;
+}
+
+.note{
+    margin: 0%;
+    margin-right: 0%;
+    font-family: 'Roboto Mono', monospace;
+    background-color: white;
+    width: 323px;
+    height: 230px;
+    border-radius: 5px;
+}
+
+.note-date{
+    font-size: 11px;
+    text-align: right;
+    
+}
+
+.note-title{
+    margin-top: 3px;
+    font-weight:800;
+    font-size: 20px;
+}
+
+.note-content{
+    margin-top: 22px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.note-icon{
+    text-align: right;
+    margin-top: 10px;
+}

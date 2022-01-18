@@ -1,0 +1,41 @@
+{% extends "main-layout.html" %}
+
+{% block title %} Add Note {% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='add-note-style.css')}}">
+{% endblock head %}
+
+{% block body %}
+
+    <div class="form-container">
+        <div class="add-note-form-box">
+            <form action="/edit-note/{{ note.note_id }}", method='POST'>
+            
+                <div class="new-note-title">New NOTE</div>
+
+                <div>
+                    <div id="note-titles">NOTE TITLE</div>
+                    <input type="text" name="note-title" id="note-title-input" class="horizontal-align remove-border" value="{{ note.title }}" required>
+                </div>
+                
+                <div>
+                    <div id="note-titles">NOTE</div>
+                    <textarea name="note-body" id="note-body-input" cols="62" rows="15" class="horizontal-align remove-border">{{ note.body }}</textarea>
+                </div>
+                
+                <div class="flex-container">
+                    <div class="check-box">
+                        <input type="checkbox" name="is-public" id="public" {{checked}}/>
+                        <label for="public">PUBLIC</label>
+                    </div>
+                    <div>
+                    <input type="button" onclick="location.href='/notes';" value="CANCLE" id="cancle-note-button">
+                    <input type="submit" value="UPDATE" id="add-note-button">
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock body %}
