@@ -21,13 +21,14 @@
 
       <div class="form-container">
 
-        <form action="">
-          <a href="#"><div class="main-title horizontal-align"> NOTE IT </div></a>
+        <form action="/login", method='POST'>
+          <a href="/"><div class="main-title horizontal-align"> NOTE IT </div></a>
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error-message">{{ messages[0] }}</div>
+            {% endif %}
+          {% endwith %}
           
-          <!-- <div class="error-message">
-            Please check your login details and try again.
-          </div> -->
-
           <div>
             <div class="text">USERNAME</div>
             <input type="text" name="username" id="Username" placeholder="elonmusk" class="input-field horizontal-align"/>
@@ -39,14 +40,14 @@
           </div>
 
           <div class="check-box">
-            <input type="checkbox" name="rem" id="remember"/>
+            <input type="checkbox" name="remember" id="remember"/>
             <label for="remember">REMEMBER ME</label>
           </div>
 
           <button id="submit-btn" class="horizontal-align" type="submit">LOG IN</button>
 
           <div class="new-user-link horizontal-align">
-            <a href="#" >New User? Create an Account</a>
+            <a href="/signup" >New User? Create an Account</a>
           </div>
           
         </form>

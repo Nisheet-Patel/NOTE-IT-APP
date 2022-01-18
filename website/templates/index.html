@@ -26,8 +26,13 @@
         </div>
         <div class="mid-options">
             <a href="/">About</a>
-            <a href="/login" id="login-link">Login</a>
-            <a href="/signup" id="signup" >Sign Up</a>
+            {% if current_user.is_authenticated %}
+                <a href="/notes">Notes</a>
+                <a href="/logout">Logout</a>
+            {% else %}
+                <a href="/login" id="login-link">Login</a>
+                <a href="/signup" id="signup" >Sign Up</a>
+            {% endif %}
         </div>
     </nav>
     

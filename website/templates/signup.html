@@ -22,12 +22,14 @@
 
       <div class="form-container">
 
-        <form action="">
-          <a href="#"><div class="main-title horizontal-align"> NOTE IT </div></a>
+        <form action="signup", method='POST'>
+          <a href="/"><div class="main-title horizontal-align"> NOTE IT </div></a>
           
-          <!-- <div class="error-message">
-            Please check your login details and try again.
-          </div> -->
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error-message">{{ messages[0] }}</div>
+            {% endif %}
+          {% endwith %}
 
           <div>
             <div class="text">USERNAME</div>
@@ -47,7 +49,7 @@
           <button id="submit-btn" class="horizontal-align" type="submit">SIGN UP</button>
 
           <div class="new-user-link horizontal-align">
-            <a href="#" >Already Have An Account?</a>
+            <a href="/login" >Already Have An Account?</a>
           </div>
           
         </form>

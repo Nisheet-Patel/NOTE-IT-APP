@@ -27,16 +27,23 @@
 
     <nav>
         <div class="main-title">
-            <a href="/">Note it</a>
+            <a href="/notes">Note it</a>
         </div>
         <div class="mid-options">
             <a href="/add-note">New Note</a>
             <a href="/shared">Shared</a>
             <a href="/">About</a>
         </div>
-        <div class="main-logout">
-            <a href="/">Logout</a>
-        </div>
+        {% if current_user.is_authenticated %}
+            <div class="main-logout">
+                <a href="/logout">Logout</a>
+            </div>
+        {% else %}
+            <div class="main-logout">
+                <a href="/login">Login</a>
+            </div>
+        {% endif %}
+        
     </nav>
 
     {% block body %} {% endblock body %}
