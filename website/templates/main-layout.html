@@ -27,7 +27,11 @@
 
     <nav>
         <div class="main-title">
-            <a href="/notes">Note it</a>
+            {% if current_user.is_authenticated %}
+                <a href="/notes">Note it</a>
+            {% else %}
+                <a href="/">Note it</a>
+            {% endif %}    
         </div>
         <div class="mid-options">
             <a href="/add-note">New Note</a>

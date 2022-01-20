@@ -22,6 +22,12 @@
         </form>
     </div>
 
+    {% if search_value|length > 0 %}
+        <div id="status-title">Search Result of "{{ search_value }}"</div>
+    {% elif for_shared == True %}
+        <div id="status-title">Public Notes</div>
+    {% endif %}
+
     <div class="notes-container">
         {% for note in notes %}
             <div class="note">

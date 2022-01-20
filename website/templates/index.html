@@ -35,6 +35,94 @@
             {% endif %}
         </div>
     </nav>
+
+    <!-- Note 1 -->
+    {% if current_user.is_authenticated %}
+        <a href="/notes">
+    {% else %}
+        <a href="/login">
+    {% endif %}
     
+    <div class="notes-container">
+        <div class="container">
+        <div class="note note-1">
+            <div class="note-body">
+            <div class="note-date">17 02 2022</div>
+            <div class="note-title">
+                <!-- 21 max characters max -->
+                Easy To Share
+            </div>
+            <div class="note-content">
+                <!-- 192 characters max | without dots -->
+                You Can Create Public Links For Selected Notes And Share With Your Firend's Easily.
+            </div>
+            <div class="note-icon">
+                <span class="iconify public-icon" data-icon="fluent:people-32-regular" data-width="24"
+                data-height="23"></span>
+                <span class="iconify delete-icon" data-icon="ic:baseline-delete-outline" data-width="24"
+                data-height="23"></span>
+                <span class="iconify edit-icon" data-icon="eva:edit-2-outline" data-width="24" data-height="23"></span>
+            </div>
+            </div>
+        </div>
+
+        <div class="note note-2">
+            <div class="note-body">
+            <div class="note-date">17 02 2022</div>
+            <div class="note-title">
+                <!-- 21 max characters max -->
+                On Any Device,Anywhere
+            </div>
+            <div class="note-content">
+                <!-- 192 characters max | without dots -->
+                Note IT is an Web App So You Can Access It Through Your PC,Phone,Tablet Regardless Of Any OS.
+            </div>
+            <div class="note-icon">
+                <span class="iconify public-icon" data-icon="fluent:people-32-regular" data-width="24"
+                data-height="23"></span>
+                <span class="iconify delete-icon" data-icon="ic:baseline-delete-outline" data-width="24"
+                data-height="23"></span>
+                <span class="iconify edit-icon" data-icon="eva:edit-2-outline" data-width="24" data-height="23"></span>
+            </div>
+            </div>
+        </div>
+
+        <div class="note note-3">
+            <div class="note-body">
+            <div class="note-date">17 02 2022</div>
+            <div class="note-title">
+                <!-- 21 max characters max -->
+                Open-Source
+            </div>
+            <div class="note-content">
+                <!-- 192 characters max | without dots -->
+                Note IT Is 100% Open-Source So You Can Be Assured That Your Notes Are Safe & Private.
+            </div>
+            <div class="note-icon">
+                <span class="iconify public-icon" data-icon="fluent:people-32-regular" data-width="24"
+                data-height="23"></span>
+                <span class="iconify delete-icon" data-icon="ic:baseline-delete-outline" data-width="24"
+                data-height="23"></span>
+                <span class="iconify edit-icon" data-icon="eva:edit-2-outline" data-width="24" data-height="23"></span>
+            </div>
+            </div>
+        </div>
+
+        <div class="note-4-5">
+            <div class="note-body" style="align-items: center;">
+            <div class="main-slogan">Never <span style='color: #FF5A5A;' >Forget</span> IT</div>
+
+            <div class="main-slogan-2">Note IT</div>
+            </div>
+        </div>
+        
+        <div class="note note-6">
+            <div class="note-body">
+            <span class="iconify" data-icon="ph:plus-thin" data-width="150"></span>
+            </div>
+        </div>
+        </div>
+        </a>
+    </div>
 </body>
 </html>

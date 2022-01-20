@@ -7,7 +7,7 @@ from secrets import token_urlsafe
 import datetime
 
 views = Blueprint('views',__name__)
-__PUBLIC_NOTE_KEY__ = 30
+__PUBLIC_NOTE_KEY__ = 20
 
 @views.route('/')
 def home():
@@ -17,13 +17,10 @@ def home():
 @views.route('/notes')
 @login_required
 def notes():
-    print("CURRENT USER: ",current_user)
     search_value = request.args.get('search-value')
     if search_value:
         notes = db.session.query(Notes,Public_Notes).join(Public_Notes, Public_Notes.Id == Notes.note_id, isouter=True).filter(Notes.user_id == current_user.id).filter(Notes.title.contains(search_value) | Notes.body.contains(search_value)).order_by(Notes.update_date.desc())
-        print(search_value)
-        print(notes)
-        return render_template('main-page.html', notes=notes)
+        return render_template('main-page.html', notes=notes, search_value=search_value)
 
     notes = db.session.query(Notes,Public_Notes).join(Public_Notes, Public_Notes.Id == Notes.note_id, isouter=True).filter(Notes.user_id == current_user.id)
 
@@ -34,7 +31,7 @@ def notes():
 def shared():
     notes = db.session.query(Notes,Public_Notes).join(Public_Notes, Public_Notes.Id == Notes.note_id).filter(Notes.user_id == current_user.id)
 
-    return render_template('main-page.html', notes=notes)
+    return render_template('main-page.html', notes=notes, for_shared=True)
 
 @views.route('/notes/<noteid>')
 @login_required
@@ -65,7 +62,6 @@ def add_note_page():
         )
         db.session.add(note)
         db.session.commit()
-        print("NOTE ID :",note.note_id)
 
         if is_public:        
             pnote = Public_Notes(Id=note.note_id, slug=token_urlsafe(__PUBLIC_NOTE_KEY__))

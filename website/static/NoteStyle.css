@@ -4,6 +4,15 @@ body{
     margin: 0%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#status-title{
+    font-size: 24px;
+    font-weight: 100;
+    text-align: center;
+    color: aliceblue;
+    margin-bottom: 10px;
 }
 
 .notes-container{
