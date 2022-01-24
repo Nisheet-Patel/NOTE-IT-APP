@@ -4,14 +4,13 @@
 Note IT</h3>
 
   <p align="center">
-    Ever Tried To 🤔 Something But
-At-last Forget It?
+    Ever Tried To Remember 🤔 Something But
+At-last Forget 🤦‍♂️ It?
     <br/>
     <br/>
-    <a href="https://github.com/NisheetNakrani/NOTE-IT-APP">View Demo</a>
-    .
+    View Demo
+    |
     <a href="https://github.com/NisheetNakrani/NOTE-IT-APP/issues">Report Bug</a>
-    .
   </p>
 </p>
 
@@ -19,7 +18,7 @@ At-last Forget It?
 
 ## About The Project
 
-![Screen Shot](https://i.ibb.co/fQb6VkS/Note-IT-Homepage.png)
+![Screen Shot](https://i.ibb.co/DkNx6x0/Final-Home-Page.png)
 
 The only Note Taking App You Need ! 📒
 
