@@ -25,11 +25,11 @@ The only Note Taking App You Need ! 📒
 Here's why:
 
 * Easy To Share 👥
-You Can Create Public Links For Selected Notes And Share With Your Firend's Easily.
+You Can Create Public Links For Selected Notes And Share With Your Friend's Easily.
 
 * On Any Device,Anywhere ☁️
 You Can Use Note IT on any device PC/Mobile on any OS. Just need Internet Connection.
-* Open-Source🙌
+* Open-Source 🙌
 Note IT Is 100% Open-Source So You Can Be Assured That Your Notes Are Safe & Private.
 
 
@@ -37,7 +37,9 @@ Note IT Is 100% Open-Source So You Can Be Assured That Your Notes Are Safe & Pri
 
 Python (Flask) | HTML | CSS | JS
 
-* [Python (Flask)](https://pypi.org/project/Flask/)
+* [Python (Flask = 2.0.2)](https://pypi.org/project/Flask/)
+* [Flask-SQLAlchemy](https://pypi.org/project/Flask-SQLAlchemy/)
+* [Flask-Login](https://pypi.org/project/Flask-Login/)
 
 
 ### Creating A Pull Request
@@ -52,5 +54,6 @@ Python (Flask) | HTML | CSS | JS
 
 ## Authors
 
-* **Nisheet Nakrani** - *Comp-Sci Student* - [Nisheet Nakrani](https://github.com/NisheetNakrani) - *Back-end & Front-end Development*
+-> [**Nisheet Nakrani**](https://github.com/NisheetNakrani) - *Comp-Sci Student* - **Back-end & Front-end Development**
+
 
