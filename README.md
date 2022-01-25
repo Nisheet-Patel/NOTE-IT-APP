@@ -8,10 +8,15 @@ Note IT</h3>
 At-last Forget 🤦‍♂️ It?
     <br/>
     <br/>
-    View Demo
+    Currently Site is Hosted on Repl.it
+    <br/>
+    <a href="https://noteit.nisheet.repl.co/">View Demo</a>
     |
     <a href="https://github.com/NisheetNakrani/NOTE-IT-APP/issues">Report Bug</a>
   </p>
+  
+  <br/>
+  
 </p>
 
 ![Contributors](https://img.shields.io/github/contributors/NisheetNakrani/NOTE-IT-APP?color=dark-green) ![Issues](https://img.shields.io/github/issues/NisheetNakrani/NOTE-IT-APP) 
@@ -26,7 +31,6 @@ Here's why:
 
 * Easy To Share 👥
 You Can Create Public Links For Selected Notes And Share With Your Friend's Easily.
-
 * On Any Device,Anywhere ☁️
 You Can Use Note IT on any device PC/Mobile on any OS. Just need Internet Connection.
 * Open-Source 🙌
