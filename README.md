@@ -58,6 +58,6 @@ Python (Flask) | HTML | CSS | JS
 
 ## Authors
 
--> [**Nisheet Nakrani**](https://github.com/NisheetNakrani) - *Comp-Sci Student* - **Back-end & Front-end Development**
-
+-> [**Nisheet Nakrani**](https://github.com/NisheetNakrani) - *Comp-Sci Student* - **Back-end & Front-end Development** </br>
+-> [**Priyanshu Dholu**](https://github.com/Priyanshu-Dholu) - *Comp-Sci Student* - **Front-end Development**
 
