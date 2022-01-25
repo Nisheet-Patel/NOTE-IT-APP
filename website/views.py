@@ -108,7 +108,7 @@ def edit_page_page(noteid):
             checked = "checked" if note.is_public else "unchecked"
             return render_template('edit-note.html', note=note, checked=checked)
         else:
-            abort(404)
+            return abort(404)
 
 @views.route('/delete/<noteid>')
 @login_required
@@ -124,7 +124,8 @@ def delete_note(noteid):
 
         return redirect(url_for('views.notes'))
     else:
-        abort(404)
+        return abort(404)
+
 @views.route('/public/<note_key>')
 def public_note(note_key):
     public_note_ = Public_Notes.query.get(note_key)
@@ -132,5 +133,4 @@ def public_note(note_key):
         note = Notes.query.get(public_note_.Id)
         return render_template('note-public.html', note=note, note_key=note_key)
     else:
-        # 404 Error
-        pass
+        return abort(404)
