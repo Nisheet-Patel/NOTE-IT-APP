@@ -47,7 +47,7 @@
                 </a>
                     <div class="note-icon">
                         {% if note[0].is_public == 1 %}
-                            <button id="public-icon-button" onclick="copyToClipboard('public/{{ note[1].slug}}')"><span class="iconify public-icon" data-icon="fluent:people-32-regular" data-width="24" data-height="23"></span></button>
+                            <button id="public-icon-button" onclick="copyToClipboard('https://noteit.nisheet.repl.co/public/{{ note[1].slug}}')"><span class="iconify public-icon" data-icon="fluent:people-32-regular" data-width="24" data-height="23"></span></button>
                         {% endif %}
                         <a href="/delete/{{ note[0].note_id }}"><span class="iconify delete-icon"  data-icon="ic:baseline-delete-outline" data-width="24" data-height="23"></span></a>
                         <a href="/edit-note/{{ note[0].note_id }}"><span class="iconify edit-icon" data-icon="eva:edit-2-outline" data-width="24" data-height="23"></span></a>

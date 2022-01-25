@@ -26,7 +26,7 @@
             <div class="footer-container">
                 <div class="left-icon">
                     {% if note.is_public == 1 %}
-                    <button id="public-icon-button" onclick="copyToClipboard('public/{{note_key}}')"><span class="iconify public-icon" data-icon="fluent:people-32-regular" data-width="32"></span></button>
+                    <button id="public-icon-button" onclick="copyToClipboard('https://noteit.nisheet.repl.co/public/{{note_key}}')"><span class="iconify public-icon" data-icon="fluent:people-32-regular" data-width="32"></span></button>
                     {% endif %}
                     <a href="/delete/{{ note.note_id }}"><span class="iconify delete-icon"  data-icon="ic:baseline-delete-outline" data-width="32"></span></a>
                     <a href="/edit-note/{{ note.note_id }}"><span class="iconify edit-icon" data-icon="eva:edit-2-outline" data-width="32"></span></a>
