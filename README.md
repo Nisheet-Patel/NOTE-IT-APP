@@ -8,9 +8,9 @@ Note IT</h3>
 At-last Forget 🤦‍♂️ It?
     <br/>
     <br/>
-    Currently Site is Hosted on Repl.it
+    Currently Site is Hosted on PythonAnywhere
     <br/>
-    <a href="https://noteit.nisheet.repl.co/">View Demo</a>
+    <a href="https://noteit.pythonanywhere.com/">View Demo</a>
     |
     <a href="https://github.com/NisheetNakrani/NOTE-IT-APP/issues">Report Bug</a>
   </p>
