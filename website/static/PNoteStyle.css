@@ -126,3 +126,26 @@ body{
     border: none;
     padding: 0px;
 }
+
+/* Mobile Styling */
+
+@media only screen and (max-width: 680px) {
+    #flex-box{
+        display: block;
+        justify-content: center;
+    }
+    .body-container{
+    }
+    #main-container{
+        width: 100vw;
+        margin-top: 0px;
+    }
+    #note-body{
+        width: 95vw;
+        margin-left: 0px;
+        padding: 0px;
+        font-size: 16px;
+        padding-left: 10px;
+    }
+    
+}
