@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template,request, redirect, url_for, flash
+from flask import Blueprint, render_template,request, redirect, url_for, flash, Markup
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, login_required, logout_user
+from flask_login import login_user, login_required, logout_user, current_user
 from jinja2 import TemplateNotFound
 from .models import Users
 from string import punctuation
@@ -16,6 +16,9 @@ def have_special_characters(username):
 
 @auth.route('/login', methods=['GET','POST'])
 def login_page():
+    if current_user.is_authenticated:
+        return redirect(url_for("views.notes"))
+    
     if request.method == 'POST':
         username = request.form.get('username')
         upassword = request.form.get('password')
@@ -25,9 +28,9 @@ def login_page():
         
         # validators
         if not user:
-            flash('Username Not Found !')
+            flash('Username Not Found !', "error")
         elif not check_password_hash(user.upassword, upassword):
-            flash("Password Incorrect !")
+            flash("Password Incorrect !", "error")
         else:
             login_user(user, remember=remember) 
             return redirect(url_for('views.notes'))
@@ -38,6 +41,9 @@ def login_page():
 
 @auth.route('/signup', methods=['GET','POST'])
 def signup_page():
+    if current_user.is_authenticated:
+        flash(Markup("You have already logged in. Click <a href='/notes'><u>here</u></a> to view notes"), "info")
+
     if request.method == 'POST':
         username = request.form.get('username')
         upassword = request.form.get('password')
@@ -46,20 +52,21 @@ def signup_page():
         user = Users.query.filter_by(username=username).first()
         # validators
         if user:
-            flash("Username address already exists")
+            flash("Username already exists", "error")
         elif have_special_characters(username):
-            flash("special characters are not allowed")
+            flash("special characters are not allowed in username", "error")
         elif len(str(username)) < 4:
-            flash("Username should be greatter than 4 charaters")
+            flash("Username should be greater than 4 characters", "error")
         elif len(upassword) < 8:
-            flash("Password should be greatter than 8 charaters")
+            flash("Password should be greater than 8 characters", "error")
         elif upassword != re_password:
-            flash("Both Password should Match")
+            flash("Both Password should Match", "error")
         else:
             new_user = Users(username=username,upassword=generate_password_hash(upassword, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
-
+            
+            flash("Account created Successfully. Now Login", "info")
             return redirect(url_for('auth.login_page'))
         return redirect(url_for('auth.signup_page'))
     else:

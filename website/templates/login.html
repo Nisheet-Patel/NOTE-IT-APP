@@ -16,27 +16,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600;700&display=swap" rel="stylesheet">
     <!-- ROBOTO FONT-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600;700&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-</head>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='favicon/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='favicon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='favicon/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static', filename='/favicon/site.webmanifest')}}">
+    
+  </head>
   <body>
 
       <div class="form-container">
 
         <form action="/login", method='POST'>
           <a href="/"><div class="main-title horizontal-align"> NOTE IT </div></a>
-          {% with messages = get_flashed_messages() %}
+          {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-                <div class="error-message">{{ messages[0] }}</div>
+              {% for category, message in messages %}
+                <div class="flash-message {{category}}">{{ message }}</div>
+              {% endfor %}
             {% endif %}
           {% endwith %}
           
           <div>
             <div class="text">USERNAME</div>
-            <input type="text" name="username" id="Username" placeholder="elonmusk" class="input-field horizontal-align"/>
+            <input type="text" name="username" id="Username" placeholder="elonmusk" class="input-field horizontal-align" required/>
           </div>
           
           <div>
             <div class="text">PASSWORD</div>
-            <input type="password" name="password" id="Password" placeholder="" class="input-field horizontal-align"/>
+            <input type="password" name="password" id="Password" placeholder="" class="input-field horizontal-align" required/>
           </div>
 
           <div class="check-box">

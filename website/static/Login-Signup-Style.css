@@ -108,11 +108,31 @@ form a {
 
 /* Error Message */
 
-.error-message {
-  background-color: #ff9494;
+.flash-message {
   border-radius: 5px;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 20px;
+}
+.error {
+  background-color: #ff9494;
+}
+
+.info {
+  background-color: #86ff7b;
+}
+/* Mobile Styling */
+
+@media only screen and (max-width: 800px) {
+  .form-container {
+    width: 100vw;
+  }
+  .input-field {
+    width: 80vw;
+    font-size: 20px;
+  }
+  #submit-btn {
+    width: 80vw;
+  }
 }

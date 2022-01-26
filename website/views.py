@@ -15,8 +15,11 @@ def home():
     
     
 @views.route('/notes')
-@login_required
 def notes():
+    if not current_user.is_authenticated:
+        flash("login to view Notes", "info")
+        return redirect(url_for("auth.login_page"))
+
     search_value = request.args.get('search-value')
     if search_value:
         notes = db.session.query(Notes,Public_Notes).join(Public_Notes, Public_Notes.Id == Notes.note_id, isouter=True).filter(Notes.user_id == current_user.id).filter(Notes.title.contains(search_value) | Notes.body.contains(search_value)).order_by(Notes.update_date.desc())
@@ -27,15 +30,21 @@ def notes():
     return render_template('main-page.html', notes=notes)
 
 @views.route('/shared')
-@login_required
 def shared():
+    if not current_user.is_authenticated:
+        flash("login to view Notes", "info")
+        return redirect(url_for("auth.login_page"))
+
     notes = db.session.query(Notes,Public_Notes).join(Public_Notes, Public_Notes.Id == Notes.note_id).filter(Notes.user_id == current_user.id)
 
     return render_template('main-page.html', notes=notes, for_shared=True)
 
 @views.route('/notes/<noteid>')
-@login_required
 def note(noteid):
+    if not current_user.is_authenticated:
+        flash("login to view Notes", "info")
+        return redirect(url_for("auth.login_page"))
+
     note = Notes.query.get(noteid)
     if note.user_id == current_user.id:
         if note.is_public:
@@ -134,3 +143,7 @@ def public_note(note_key):
         return render_template('note-public.html', note=note, note_key=note_key)
     else:
         return abort(404)
+
+@views.route('/about')
+def about():
+    return render_template('about-page.html')
