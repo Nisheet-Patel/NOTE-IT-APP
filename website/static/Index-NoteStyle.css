@@ -1,157 +1,278 @@
 body {
-    height: 100vh;
-    background: linear-gradient(116.82deg, #65c7f7 20.83%, #0052d4 100%);
-    margin: 0%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: "Roboto Mono", monospace;
-  }
-  
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(1fr, 2);
-    align-content: center;
-    justify-content: center;
-  }
-  
-  .container div {
-    /* border: 2px solid rgb(245, 30, 30); */
-    margin: 5px;
-  }
-  
+  height: 100vh;
+  background: linear-gradient(116.82deg, #65c7f7 20.83%, #0052d4 100%);
+  margin: 0%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Roboto Mono", monospace;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.container div {
+  /* border: 2px solid rgb(245, 30, 30); */
+  margin: 5px;
+}
+
+.notes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 150px;
+}
+.notes-container a {
+  text-decoration: none;
+  color: black;
+}
+.notes-container a:visited {
+  color: black;
+}
+.note-body {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 10px;
+}
+
+.note {
+  font-family: "Roboto Mono", monospace;
+  background-color: white;
+  width: 323px;
+  height: 230px;
+  border-radius: 5px;
+}
+.note:hover {
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.25);
+  transition: 0.5s;
+}
+
+.note-date {
+  font-size: 11px;
+  text-align: right;
+}
+
+.note-title {
+  margin-top: 3px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.note-content {
+  margin-top: 22px;
+  font-size: 14px;
+  font-weight: 500;
+  height: 135px;
+}
+
+/* For Note Grid */
+
+.note-1 {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.note-2 {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.note-3 {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.note-4-5 {
+  color: white;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  width: inherit;
+  background: transparent;
+  font-size: larger;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.note-6 {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* For Note Grid  Ends */
+
+.main-slogan {
+  font-size: 61px;
+  font-weight: 500;
+}
+
+.main-slogan-2 {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 61px;
+  font-weight: 500;
+  text-shadow: 2px 6px 5px rgba(0, 0, 0, 0.25);
+}
+/* ICONs */
+.note-icon {
+  cursor: pointer;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.icon-button {
+  border: none;
+  background-color: white;
+}
+
+.public-icon:hover {
+  color: #0052d4;
+  transition: 0.3s;
+}
+
+.delete-icon:hover {
+  color: rgb(255, 43, 43);
+  transition: 0.3s;
+}
+
+.edit-icon:hover {
+  color: rgb(48, 206, 48);
+  transition: 0.3s;
+}
+
+/* For Tablets */
+@media screen and (max-width: 985px) {
   .notes-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 150px;
+    /* background-color: #0052d4; */
+    /* position: relative; */
+    align-items: center;
+    
   }
-  .notes-container a {
-    text-decoration: none;
-    color: black;
+  .container {
+    /* display: none; */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat (6, 1fr);
+    
   }
-  .notes-container a:visited {
-    color: black;
-  }
-  .note-body {
-    margin-left: 12px;
-    margin-right: 12px;
-    margin-top: 10px;
-  }
-  
-  .note {
-    font-family: "Roboto Mono", monospace;
-    background-color: white;
-    width: 323px;
-    height: 230px;
-    border-radius: 5px;
-  }
-  .note:hover {
-    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.25);
-    transition: 0.5s;
-  }
-  
-  .note-date {
-    font-size: 11px;
-    text-align: right;
-  }
-  
-  .note-title {
-    margin-top: 3px;
-    font-weight: 800;
-    font-size: 20px;
-  }
-  
-  .note-content {
-    margin-top: 22px;
-    font-size: 14px;
-    font-weight: 500;
-    height: 135px;
-  }
-  
-  
-  /* For Note Grid */
-  
   .note-1 {
     grid-column-start: 1;
-    grid-column-end: 1;
+    grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-end: 1;
   }
   
   .note-2 {
     grid-column-start: 2;
-    grid-column-end: 2;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
   }
   .note-3 {
-    grid-column-start: 3;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
   }
   
   .note-4-5 {
     color: white;
     grid-column-start: 1;
     grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
     width: inherit;
-    background: transparent;
-    font-size: larger;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-  }
-  .note-6 {
-    grid-column-start: 3;
-    grid-column-end: 3;
+    /* background: red; */
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
-  /* For Note Grid  Ends */
-  
-  .main-slogan{
-      font-size: 61px;
-      font-weight: 500;
+
+  .note-4-5 div{
+    font-size: 35px;
+  }
+  .note-6 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* For Mobile Screens */
+@media screen and (max-width: 600px) {
+  .notes-container {
+    /* background-color: #0052d4; */
+    /* position: relative; */
+    align-items: center;
+    
+  }
+  .container {
+    /* display: none; */
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat (6, 1fr);
+    
+  }
+  .note-1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
   }
   
-  .main-slogan-2{
-      display:flex;
-      flex-direction: row-reverse;
-      font-size: 61px;
-      font-weight: 500;
-      text-shadow: 2px 6px 5px rgba(0, 0, 0, 0.25);
+  .note-2 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
   }
-  /* ICONs */
-  .note-icon {
-    cursor: pointer;
-    text-align: right;
-    margin-top: 10px;
-  }
-  
-  .icon-button {
-    border: none;
-    background-color: white;
+  .note-3 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 3;
   }
   
-  .public-icon:hover {
-    color: #0052d4;
-    transition: 0.3s;
+  .note-4-5 {
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    width: inherit;
+    /* background: red; */
+    display: flex;
+    justify-content: end;
+    align-items: center;
   }
-  
-  .delete-icon:hover {
-    color: rgb(255, 43, 43);
-    transition: 0.3s;
+
+  .note-4-5 div{
+    font-size: 35px;
   }
-  
-  .edit-icon:hover {
-    color: rgb(48, 206, 48);
-    transition: 0.3s;
+  .note-6 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 5;
+    grid-row-end: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
+}
