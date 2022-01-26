@@ -18,12 +18,12 @@ body {
   margin: auto;
 }
 
-.form-container {
-  width: 680px;
+.form-container{
+  width: 511px;
   /* height: 510px; */
   background-color: white;
   border-radius: 5px;
-  box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, 0.25)
 }
 
 form {
@@ -44,13 +44,13 @@ form a {
 
 .input-field {
   background-color: #eaeaea;
-  width: 526px;
+  width: 440px;
+  height: 50px; 
   border: none;
   outline: 0;
   font-size: 24px;
-  height: 60px;
   border-radius: 5px;
-  border: 2px solid #dddddd;
+  border: 1px solid #EAEAEA;
   margin-bottom: 25px;
   padding-left: 10px;
   outline: none;
@@ -65,28 +65,29 @@ form a {
   color: #aaaaaa;
 }
 
-.text {
-  margin-left: 75px;
+.text{
+  margin-left: 35px;
   margin-bottom: 7px;
   color: #393939;
 }
 
-.check-box {
-  margin-left: 75px;
+.check-box{
+  margin-left: 35px;
   color: #393939;
-  margin-bottom: 25px;
+  margin-bottom: -20px;
 }
 
-#submit-btn {
-  width: 526px;
-  font-size: 24px;
+#submit-btn{
+  width: 440px;
   height: 60px;
-  text-align: center;
+  font-size: 24px;
+  text-align: center; 
   margin: auto;
   border: none;
   border-radius: 5px;
-  background-color: #34bcff;
+  background-color: #34BCFF;
   color: white;
+  margin-top: 35px;
 }
 
 #submit-btn:hover {
@@ -96,9 +97,9 @@ form a {
   transition: 0.3s;
 }
 
-.new-user-link {
-  margin-top: 30px;
-  margin-bottom: 20px;
+.new-user-link{
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .new-user-link a {
