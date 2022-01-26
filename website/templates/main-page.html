@@ -40,10 +40,8 @@
                         <!-- 21 max characters max -->
                         {{ note[0].title|truncate(24, True, '...', 0) }}
                     </div>
-                    <div class="note-content">
-                        <!-- 192 characters max | without dots -->
-                        {{ note[0].body|truncate(195, False, '...', 0) }}
-                    </div>
+                    <!-- 192 characters max | without dots -->
+                    <textarea class="note-content" readonly>{{ note[0].body|truncate(195, False, '...', 0) }}</textarea>
                 </a>
                     <div class="note-icon">
                         {% if note[0].is_public == 1 %}

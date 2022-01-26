@@ -62,6 +62,13 @@ body{
     font-size: 14px;
     font-weight: 500;
     height: 108px;
+    width: 295px;
+    resize: none;
+    border: none;
+}
+
+.note-content:focus{
+    outline: none;
 }
 
 /* ICONs */

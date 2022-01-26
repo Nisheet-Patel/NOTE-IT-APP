@@ -58,10 +58,16 @@ body{
 #note-body{
     margin-top: 17px;
     margin-left: 29px;
-    margin-right: 48px;
     height: 380px;
+    width: 640px;
+    resize: none;
+    border: none;
+    font-size: 14px;
 }
 
+#note-body:focus{
+    outline: none;
+}
 
 
 /* Footer Container */
