@@ -2,4 +2,5 @@ temp
 __pycache__
 config.json
 database.db
+*.ini
 .env
