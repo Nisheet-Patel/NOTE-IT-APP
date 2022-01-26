@@ -8,7 +8,11 @@
     
     <!-- ICONs -->
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
-
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='favicon/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='favicon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='favicon/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static', filename='/favicon/site.webmanifest')}}">
     <!-- Styles -->
     <link rel="stylesheet" href="{{url_for('static', filename='Main-Page-NavStyle.css')}}">
     <!-- FONTs -->
@@ -51,6 +55,7 @@
     </nav>
 
     {% block body %} {% endblock body %}
-
+    
+    <a href="/add-note" id="add-new-note-link"><span class="iconify" id="add-new-note-icon" data-icon="akar-icons:circle-plus" data-width="50" data-height="50"></span></a>
 </body>
 </html>
