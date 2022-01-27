@@ -3,6 +3,7 @@
     /* margin-left: 20px; */
     margin-bottom: 20px;
     justify-content: center;
+    margin-top: 1.5rem;
 }
 
 #serach-bar-container div{
@@ -43,3 +44,15 @@ input[type="search"]{
     margin-left: 5px;
     background-color: white;
 }
+
+@media only screen and (max-width: 680px) {
+    #serach-bar-container div{
+        display: flex;
+        width: 329px;
+        height: 40px;
+        background-color: white ;
+        align-items: center;
+        border-radius: 7px;
+    }
+}
+  
