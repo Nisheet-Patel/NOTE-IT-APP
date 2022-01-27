@@ -42,7 +42,7 @@ body{
     margin-top: 0.4rem;
 }
 /* The Main Grid */
-.container{
+.Container{
     display: grid;
     grid-template-columns: 412px 412px;
     grid-template-rows: 449px ;
@@ -185,7 +185,7 @@ body{
 
 
 @media only screen and (max-width: 810px) {
-    .container{
+    .Container{
         display: grid;
         grid-template-columns: 412px;
         grid-template-rows: 449px 449px;
@@ -222,7 +222,7 @@ body{
 }
 
 @media only screen and (max-width: 450px) {
-    .container{
+    .Container{
         display: grid;
         grid-template-columns: 100vw;
         grid-template-rows: 50vh 50vh;
