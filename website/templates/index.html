@@ -8,7 +8,7 @@
 
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
     <link rel="stylesheet" href="{{url_for('static', filename='Index-NoteStyle.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='Index-Page-NavStyle.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='Main-Page-NavStyle.css')}}">
 
     <!-- FONTs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,21 +25,31 @@
 </head>
 <body>
 
-    <nav>
-        <div class="main-title">
-            <a href="/">Note it</a>
+    <nav class="navbar">
+        <div class="container">
+          <section class="wrapper">
+            <a href="/" class="brand">Note it</a>
+            <button type="button" class="burger" id="burger">
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+            </button>
+            <div class="menu" id="menu">
+              <ul class="menu-inner">
+                <li class="menu-item"><a href="/about" class="menu-link">About</a></li>
+                {% if current_user.is_authenticated %}
+                    <li class="menu-item"><a href="/notes" class="menu-link">Notes</a></li>
+                    <li class="menu-item"><a href="/logout" class="menu-link" id="logout">Logout</a></li>
+                {% else %}
+                    <li class="menu-item"><a href="/login" class="menu-link">Login</a></li>
+                    <li class="menu-item"><a href="/signup" class="menu-link" id="signup">Signup</a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </section>
         </div>
-        <div class="mid-options">
-            <a href="/">About</a>
-            {% if current_user.is_authenticated %}
-                <a href="/notes">Notes</a>
-                <a href="/logout">Logout</a>
-            {% else %}
-                <a href="/login" id="login-link">Login</a>
-                <a href="/signup" id="signup" >Sign Up</a>
-            {% endif %}
-        </div>
-    </nav>
+      </nav>
 
     <!-- Note 1 -->
     {% if current_user.is_authenticated %}
@@ -49,7 +59,7 @@
     {% endif %}
     
     <div class="notes-container">
-        <div class="container">
+        <div class="Container">
         <div class="note note-1">
             <div class="note-body">
             <div class="note-date">17 02 2022</div>
@@ -127,5 +137,9 @@
         </div>
         </a>
     </div>
+
+    <!-- Script -->
+    <script src="{{url_for('static', filename='NavScript.js')}}"></script>
+    
 </body>
 </html>

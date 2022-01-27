@@ -7,7 +7,7 @@ body {
   font-family: "Roboto Mono", monospace;
 }
 
-.container {
+.Container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(2, 1fr);
@@ -16,7 +16,7 @@ body {
   align-items: center;
 }
 
-.container div {
+.Container div {
   /* border: 2px solid rgb(245, 30, 30); */
   margin: 5px;
 }
@@ -164,7 +164,7 @@ body {
     align-items: center;
     
   }
-  .container {
+  .Container {
     /* display: none; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat (6, 1fr);
@@ -204,7 +204,7 @@ body {
   }
 
   .note-4-5 div{
-    font-size: 35px;
+    font-size: 50px;
   }
   .note-6 {
     grid-column-start: 2;
@@ -225,7 +225,7 @@ body {
     align-items: center;
     
   }
-  .container {
+  .Container {
     /* display: none; */
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat (6, 1fr);
