@@ -1,0 +1,107 @@
+{% extends "main-layout.html" %}
+
+{% block title %} About {% endblock title %}
+
+{% block head %}
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{url_for('static', filename='AboutPageStyle.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='Profile.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='ScrollbarStyle.css')}}">
+{% endblock head %}
+
+{% block body %}
+  <div class="brand-logo">
+    <a href="/"><img src="{{url_for('static', filename='noteit-logo.png')}}" alt="Brand Logo" /></a>
+  </div>
+
+  <div class="brand-line">
+    <p>Ever Tried To Remember Something But At-last Forget It?</p>
+    <p>Now Never Forget IT, Note it</p>
+  </div>
+
+  <div class="container">
+    <div class="intro-1">
+      <h3 class="main-title">About Note it</h3>
+      <p id="inner-text-1">
+        Note it is Free, Easy to Use, Easy to Share Public links & its Open Source. 
+        It is fully responsive for both Mobile & Tablets, 
+        We tried to make it more Simple & Easy so that you can note Your Actions Easily. 
+        You can save as many Notes you want for Free.
+      </p>
+      <h3 id="main-title-2">Note IT Limits</h3>
+      <p id="inner-text-2">
+        Title - 70 characters <br />
+        body - 700 characters <br />
+        username - 25 characters <br />
+        password - 100 characters <br />
+      </p>
+    </div>
+
+    <div class="intro-2">
+      <h3 class="main-title built-with">Built With</h3>
+      <div class="logo-container">
+        <a href="https://www.python.org/"><span class="iconify tool-icon" data-icon="akar-icons:python-fill" data-width="20"></span></a>
+        <a href="https://flask.palletsprojects.com/"><span class="iconify tool-icon" data-icon="bx:bxl-flask" data-width="20"></span></a>
+        <a href="https://en.wikipedia.org/wiki/HTML"><span class="iconify tool-icon" data-icon="akar-icons:html-fill" data-width="20"></span></a>
+        <a href="https://en.wikipedia.org/wiki/CSS"><span class="iconify tool-icon" data-icon="akar-icons:css-fill" data-width="20"></span></a>
+        <a href="https://www.javascript.com/"><span class="iconify tool-icon" data-icon="fa-brands:js" data-width="20"></span></a>
+        <a href="https://www.figma.com/"><span class="iconify tool-icon" data-icon="akar-icons:figma-fill" data-width="20"></span></a>
+      </div>
+      <p id="inner-text">
+        Python | Flask | HTML | CSS | JS <br> Flask-SQLAlchemy | Flask-Login <br> Figma
+        | SQLite
+      </p>
+
+      <a id="source-link" href="https://github.com/NisheetNakrani/NOTE-IT-APP">
+        <h3> Source Code Link  <span class="iconify" data-icon="akar-icons:github-fill" data-width="30"></span> </h3>
+      </a>
+
+      <h3 id="python-link-title">Website Hosted on</h3>
+      <a href="https://www.pythonanywhere.com/" id="python-link">pythonanywhere.com</a>
+    </div>
+    
+    <div class="user-1">
+      <div class="profile-container">
+        <div class="img-container">
+            <a href="https://github.com/NisheetNakrani"><img src="{{url_for('static', filename='nisheet.jpg')}}" /></a>
+        </div>
+        <div>
+            <div class="profile-detail-container">
+                <div class="dev-name">Nisheet Patel</div>
+                <div class="dev-details">
+                    Computer Science Student <br>
+                    Frontend - Backend Development
+                </div>
+            </div>
+            <div class="social-icon-container">
+                <a href="https://github.com/NisheetNakrani"><span class="iconify profile-icon" data-icon="akar-icons:github-fill" data-width="22"></span></a>
+                <a href="https://www.instagram.com/nisheet_/"><span class="iconify profile-icon" data-icon="akar-icons:instagram-fill" data-width="22"></span></a>
+                <a href="https://discord.gg/hfrz8AFhxT"><span class="iconify profile-icon" data-icon="akar-icons:discord-fill" data-width="22"></span></a>
+                <a href="https://linktr.ee/nisheetnakrani"><span class="iconify profile-icon" data-icon="simple-icons:linktree" data-width="22"></span></a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="user-2">
+      <div class="profile-container">
+        <div class="img-container">
+            <a href="https://github.com/Priyanshu-Dholu"><img src="{{url_for('static', filename='priyanshu.png')}}" /></a>
+        </div>
+        <div>
+            <div class="profile-detail-container">
+                <div class="dev-name">Priyanshu Patel</div>
+                <div class="dev-details">
+                    Computer Science Student <br>
+                    Frontend Development
+                </div>
+            </div>
+            <div class="social-icon-container">
+                <a href="https://github.com/Priyanshu-Dholu"><span class="iconify profile-icon" data-icon="akar-icons:github-fill" data-width="22"></span></a>
+                <a href="priyanshu.ancientry@slmail.me"><span class="iconify profile-icon" data-icon="ant-design:mail-outlined" data-width="22"></span></a>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+{% endblock body %}

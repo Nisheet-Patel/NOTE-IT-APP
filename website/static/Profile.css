@@ -1,0 +1,71 @@
+body {
+  height: 100vh;
+  background: linear-gradient(116.82deg, #65c7f7 20.83%, #0052d4 100%);
+  margin: 0%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Roboto", monospace;
+}
+
+.profile-container{
+    display: flex;
+    width: 338px;
+    height: 130px;
+    background-color: white;
+    border-radius: 15px;
+    transition: 1s box-shadow;
+    margin-right: 0px;
+}
+.profile-container:hover{
+    box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+    
+}
+
+.img-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+}
+
+.profile-detail-container{
+    margin-left: 1rem;
+}
+
+.dev-name{
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 1rem;
+    color: #1fa9ee;
+}
+.dev-details{
+    font-size: 14px;
+}
+
+.social-icon-container{
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.profile-icon{
+    color: black;
+    margin-right: 0.5rem;
+    transition: 0.5s color;
+}
+
+.profile-icon:hover{
+    color: #1fa9ee;
+    transition: 0.2s;
+}
+.profile-icon:visited{
+    color: black;
+}

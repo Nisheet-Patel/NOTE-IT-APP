@@ -134,3 +134,7 @@ def public_note(note_key):
         return render_template('note-public.html', note=note, note_key=note_key)
     else:
         return abort(404)
+
+@views.route('/about')
+def about():
+    return render_template('about-page.html')

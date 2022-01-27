@@ -46,9 +46,9 @@ def signup_page():
         user = Users.query.filter_by(username=username).first()
         # validators
         if user:
-            flash("Username address already exists")
+            flash("Username already exists")
         elif have_special_characters(username):
-            flash("special characters are not allowed")
+            flash("special characters are not allowed in username")
         elif len(str(username)) < 4:
             flash("Username should be greatter than 4 charaters")
         elif len(upassword) < 8:

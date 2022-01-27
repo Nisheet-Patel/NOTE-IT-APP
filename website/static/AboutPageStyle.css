@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(116.82deg, #65C7F7 20.83%, #0052D4 100%);
+    margin: 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.brand-logo{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-logo img{
+    height: fit-content;
+    width: 200px;
+    /* border: 2px solid black; */
+    border-radius: 50px;
+    /* position: relative; */
+    /* top: 1.5rem; */
+}
+.brand-line{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 24px;
+    color: white;
+    margin-top: 0.2rem;
+}
+.brand-line p{
+    margin-top: 0.4rem;
+}
+/* The Main Grid */
+.container{
+    display: grid;
+    grid-template-columns: 412px 412px;
+    grid-template-rows: 449px ;
+    grid-gap: 25px;
+
+    justify-content: center;
+    position: relative;
+    top: 2rem;
+}
+
+.intro-1{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.main-title{
+    color: #1D9BD9;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.built-with{
+    font-size: 30px;
+}
+
+#main-title-2{
+    color: #1D9BD9;
+    position: relative;
+    top: 5.5rem;
+    font-size: 24px;
+}
+#inner-text-1{
+    text-align: center;
+    position: relative;
+    top: 1.5rem;
+    text-align: justify;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+#inner-text-2{
+    text-align:center;
+    position: relative;
+    top: 6.5rem;
+    font-size: 20px;
+}
+.intro-2{
+    grid-row-start: 1;
+    grid-column-start: 2;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.logo-container{
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.logo-container a{
+    color: black;
+}
+
+.logo-container a:visited{
+    color: black;
+}
+.tool-icon:hover{
+    color: #1fa9ee;
+    transition: 0.2s;
+}
+
+#inner-text{
+    text-align: center;
+    width: 300px;
+    gap: 5px;
+    padding-top: 5px;
+}
+
+
+#source-link{
+    position: relative;
+    top: 50px;
+    text-decoration: none;
+}
+
+#source-link h3{
+    color: #1D9BD9;
+    font-size: 30px;
+}
+
+#source-link svg{
+    color: black;
+}
+
+#python-link-title{
+    position: relative;
+    top: 6rem;
+    color: #1D9BD9;
+    font-size: 20px;
+}
+#python-link{
+    position: relative;
+    top: 6rem;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.user-1{
+    grid-column-start: 1;
+    grid-row-start: 2;
+    display: flex;
+    justify-content: flex-end;
+    height: 130px;
+}
+
+.user-2{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: flex;
+    height: 130px;
+
+}
+
+
+@media only screen and (max-width: 810px) {
+    .container{
+        display: grid;
+        grid-template-columns: 412px;
+        grid-template-rows: 449px 449px;
+        grid-gap: 25px;
+    }
+    .brand-line{
+        font-size: 20px;
+    }
+    .intro-1{   
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
+    .intro-2{
+        grid-row-start: 2;
+        grid-column-start: 1;
+    }
+
+    .user-1{
+        grid-row-start: 3;
+        grid-column-start: 1;
+        justify-content: center;
+    }
+    .user-2{
+        grid-row-start: 4;
+        grid-column-start: 1;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .brand-line{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .container{
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 50vh 50vh;
+    }
+    .brand-line p{
+        margin-left: 1.5rem;
+    }
+}
