@@ -147,6 +147,17 @@ html {
   transition: 3ms;
 }
 
+
+#signup{
+  border: 1px solid #8AEDFF;
+  border-radius: 100px;
+  /* padding */
+  padding: 5px 25px;
+}
+#signup:hover{
+  color: #8AEDFF;
+}
+
 @media only screen and (max-width: 668px) {
   .navbar .burger {
     display: block;
@@ -173,6 +184,12 @@ html {
     align-items: flex-start;
     gap: 0.75rem;
     padding: 1rem 0;
+  }
+  
+  #signup{
+    border: 0px;
+    border-radius: 100px;
+    padding: 0px 0px;
   }
 }
 
