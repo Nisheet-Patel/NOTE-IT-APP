@@ -125,3 +125,35 @@ form{
     align-items: center;
     margin: auto;  
 }
+
+/* Mobile Styling */
+
+@media only screen and (max-width: 800px) {
+    .add-note-form-box{
+        width: 100vh;
+    }
+    #note-title-input {
+        width: 85vw;
+    }
+    #note-body-input{
+        width: 85vw;
+    }
+    #note-titles{
+        margin-left: 7vw;
+    }
+
+    .check-box {
+        margin-left: 2rem;
+    }
+
+    #add-note-button {
+        margin-right: 2rem;
+        width: 110px;
+        font-size: 24px;
+    }
+    #cancle-note-button {
+        margin-right: 0px;
+        width: 110px;
+        font-size: 24px;
+    }
+}
