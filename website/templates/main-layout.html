@@ -33,9 +33,9 @@
         <div class="container">
             <section class="wrapper">
                 {% if current_user.is_authenticated %}
-                    <a href="/" class="brand">Note it</a>
-                {% else %}
                     <a href="/notes" class="brand">Note it</a>
+                {% else %}
+                    <a href="/" class="brand">Note it</a>
                 {% endif %}
                 <button type="button" class="burger" id="burger">
                     <span class="burger-line"></span>
