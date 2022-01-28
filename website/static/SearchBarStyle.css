@@ -48,11 +48,15 @@ input[type="search"]{
 @media only screen and (max-width: 680px) {
     #serach-bar-container div{
         display: flex;
-        width: 329px;
+        width: fit-content;
         height: 40px;
         background-color: white ;
         align-items: center;
         border-radius: 7px;
+    }
+    #search-icon{
+        margin-left: 0px;
+        background-color: white;
     }
 }
   
