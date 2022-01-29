@@ -30,9 +30,11 @@
         <form action="signup", method='POST'>
           <a href="/"><div class="main-title horizontal-align"> NOTE IT </div></a>
           
-          {% with messages = get_flashed_messages() %}
+          {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-                <div class="error-message">{{ messages[0] }}</div>
+              {% for category, message in messages %}
+                <div class="flash-message {{category}}">{{ message }}</div>
+              {% endfor %}
             {% endif %}
           {% endwith %}
 
