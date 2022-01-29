@@ -134,11 +134,12 @@ body{
         display: block;
         justify-content: center;
     }
-    .body-container{
-    }
     #main-container{
         width: 100vw;
         margin-top: 0px;
+    }
+    #note-title{
+        font-size: 20px;
     }
     #note-body{
         width: 95vw;
