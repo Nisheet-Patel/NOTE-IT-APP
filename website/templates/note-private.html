@@ -1,46 +1,82 @@
-{% extends 'main-layout.html' %}
-
-{% block title %}Note{% endblock title%}
-
-{% block head %}
-    <link rel="stylesheet" href="{{url_for('static', filename='PNoteStyle.css')}}">
-    <!-- Scripts -->
-    <script src="{{url_for('static', filename='Copy.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.9/dist/clipboard.min.js"></script>
-{% endblock head %}
-
-{% block body %}
-    <div id="flex-box">
-        <div id="main-container">
-            <div class="header-container">
-                <a href="/notes">
-                    <span class="iconify back-icon" data-icon="eva:arrow-ios-back-fill" id="back-icon-button" data-width="38" data-height="38"></span>
-                </a>
-                <div id="username-date">{{ note.update_date }}</div>
-            </div>
-
-            <div class="body-container">
-                <div id="note-title">{{ note.title }}</div>
-                <textarea id="note-body" readonly>{{ note.body }}</textarea>
-            </div>
-
-            <div class="footer-container">
-                <div class="left-icon">
-                    {% if note.is_public == 1 %}
-                    <button id="public-icon-button" onclick="copyToClipboard('https://noteit.pythonanywhere.com/public/{{note_key}}')"><span class="iconify public-icon" data-icon="fluent:share-24-regular" data-width="32"></span></button>
-                    {% endif %}
-                    <a href="/delete/{{ note.note_id }}"><span class="iconify delete-icon"  data-icon="ic:baseline-delete-outline" data-width="32"></span></a>
-                    <a href="/edit-note/{{ note.note_id }}"><span class="iconify edit-icon" data-icon="eva:edit-2-outline" data-width="32"></span></a>
-                </div>
-                <div class="right-icon">
-                    <button id="btncpy" data-clipboard-action="copy" data-clipboard-target="#note-body"></button>
-                    <span class="iconify copy-icon" data-icon="ri:file-copy-2-line" data-width="32"></span>
-                </div>
-            </div>
-        </div>
+{% extends 'main-layout.html' %} {% block title %}Note{% endblock title%} {%
+block head %}
+<link
+  rel="stylesheet"
+  href="{{url_for('static', filename='PNoteStyle.css')}}"
+/>
+<!-- Scripts -->
+<script src="{{url_for('static', filename='Copy.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.9/dist/clipboard.min.js"></script>
+{% endblock head %} {% block body %}
+<div id="flex-box">
+  <div id="main-container">
+    <div class="header-container">
+      <a href="/notes">
+        <span
+          class="iconify back-icon"
+          data-icon="eva:arrow-ios-back-fill"
+          id="back-icon-button"
+          data-width="38"
+          data-height="38"
+        ></span>
+      </a>
+      <div id="username-date">{{ note.update_date }}</div>
     </div>
 
-    <script>
-        let clipboard1 = new ClipboardJS('#btncpy');
-    </script>
+    <div class="body-container">
+      <div id="note-title">{{ note.title }}</div>
+      <textarea id="note-body" readonly>{{ note.body }}</textarea>
+    </div>
+
+    <div class="footer-container">
+      <div class="left-icon">
+        {% if note.is_public == 1 %}
+        <button
+          id="public-icon-button"
+          onclick="copyToClipboard('https://noteit.pythonanywhere.com/public/{{note_key}}')"
+        >
+          <span
+            class="iconify public-icon"
+            data-icon="fluent:share-24-regular"
+            data-width="32"
+          ></span>
+        </button>
+        {% endif %}
+        <a href="/delete/{{ note.note_id }}"
+          ><span
+            class="iconify delete-icon"
+            data-icon="ic:baseline-delete-outline"
+            data-width="32"
+          ></span
+        ></a>
+        <a href="/edit-note/{{ note.note_id }}"
+          ><span
+            class="iconify edit-icon"
+            data-icon="eva:edit-2-outline"
+            data-width="32"
+          ></span
+        ></a>
+      </div>
+      <div class="right-icon">
+        <a
+          href=""
+          id="btncpy"
+          class="copy-icon"
+          data-clipboard-action="copy"
+          data-clipboard-target="#note-body"
+        >
+          <span
+            class="iconify copy-icon"
+            data-icon="ri:file-copy-2-line"
+            data-width="32"
+          ></span
+        ></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let clipboard1 = new ClipboardJS("#btncpy");
+</script>
 {% endblock body %}
