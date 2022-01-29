@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='PNoteStyle.css')}}">
     <!-- Scripts -->
     <script src="{{url_for('static', filename='Copy.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.9/dist/clipboard.min.js"></script>
 {% endblock head %}
 
 {% block body %}
@@ -32,9 +33,14 @@
                     <a href="/edit-note/{{ note.note_id }}"><span class="iconify edit-icon" data-icon="eva:edit-2-outline" data-width="32"></span></a>
                 </div>
                 <div class="right-icon">
+                    <button id="btncpy" data-clipboard-action="copy" data-clipboard-target="#note-body"></button>
                     <span class="iconify copy-icon" data-icon="ri:file-copy-2-line" data-width="32"></span>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        let clipboard1 = new ClipboardJS('#btncpy');
+    </script>
 {% endblock body %}
