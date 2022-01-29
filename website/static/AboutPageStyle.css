@@ -69,7 +69,7 @@ body{
 
 .main-title{
     color: #1D9BD9;
-    font-size: 17px;
+    font-size: 24px;
     font-weight: bold;
     margin-top: 10px;
 }
@@ -80,8 +80,8 @@ body{
 #main-title-2{
     color: #1D9BD9;
     position: relative;
-    top: 2.5rem;
-    font-size: 17px;
+    top: 5.5rem;
+    font-size: 24px;
 }
 #inner-text-1{
     text-align: center;
@@ -90,13 +90,13 @@ body{
     text-align: justify;
     margin-right: 1rem;
     margin-left: 1rem;
-    font-size: x-small;
+    font-size: large;
 }
 #inner-text-2{
     text-align:center;
     position: relative;
-    top: 4.5rem;
-    font-size: 17px;
+    top: 6.5rem;
+    font-size: 20px;
 }
 .intro-2{
     grid-row-start: 1;
@@ -146,9 +146,7 @@ body{
 
 #source-link h3{
     color: #1D9BD9;
-    font-size: 21px;
-    position: relative;
-    bottom: 46px;
+    font-size: 30px;
 }
 
 #source-link svg{
@@ -157,15 +155,13 @@ body{
 
 #python-link-title{
     position: relative;
-    top: 1rem;
+    top: 6rem;
     color: #1D9BD9;
     font-size: 20px;
-    text-align: center;
-    margin-left: -10px;
 }
 #python-link{
     position: relative;
-    top: 2rem;
+    top: 6rem;
     text-decoration: none;
     color: black;
 }
@@ -235,5 +231,32 @@ body{
     .brand-line p{
         font-size: 12px;
         text-align: center;
+    }
+    .main-title{
+        font-size: 17px;
+    }
+    #main-title-2{
+        top: 2.5rem;
+        font-size: 17px;
+    }
+    #inner-text-1{
+        font-size: small;
+    }
+    #inner-text-2{
+        top: 4.5rem;
+        font-size: 17px;
+    }
+    #source-link h3{
+        font-size: 21px;
+        position: relative;
+        bottom: 25px;
+    }
+    #python-link-title{
+        top: 4rem;
+        text-align: center;
+        margin-left: -10px;
+    }
+    #python-link{
+        top: 4.5rem;
     }
 }
