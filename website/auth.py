@@ -25,9 +25,9 @@ def login_page():
         
         # validators
         if not user:
-            flash('Username Not Found !')
+            flash('Username Not Found !', "error")
         elif not check_password_hash(user.upassword, upassword):
-            flash("Password Incorrect !")
+            flash("Password Incorrect !", "error")
         else:
             login_user(user, remember=remember) 
             return redirect(url_for('views.notes'))
@@ -46,15 +46,15 @@ def signup_page():
         user = Users.query.filter_by(username=username).first()
         # validators
         if user:
-            flash("Username already exists")
+            flash("Username already exists", "error")
         elif have_special_characters(username):
-            flash("special characters are not allowed in username")
+            flash("special characters are not allowed in username", "error")
         elif len(str(username)) < 4:
-            flash("Username should be greatter than 4 charaters")
+            flash("Username should be greatter than 4 charaters", "error")
         elif len(upassword) < 8:
-            flash("Password should be greatter than 8 charaters")
+            flash("Password should be greatter than 8 charaters", "error")
         elif upassword != re_password:
-            flash("Both Password should Match")
+            flash("Both Password should Match", "error")
         else:
             new_user = Users(username=username,upassword=generate_password_hash(upassword, method='sha256'))
             db.session.add(new_user)

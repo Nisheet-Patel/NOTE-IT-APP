@@ -59,4 +59,10 @@ input[type="search"]{
         background-color: white;
     }
 }
-  
+
+@media only screen and (max-width: 440px) {
+    input[type="search"]{
+        width: 90vw;
+    }
+
+}
