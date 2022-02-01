@@ -1,5 +1,8 @@
-<br/>
 <p align="center">
+  <img height="150px" width="fit-content" src="https://i.ibb.co/R2WdVYF/noteit-logo.png" />
+</p>
+<p align="center">
+
   <h3 align="center">Never Forget IT,
 Note IT</h3>
 
