@@ -2,7 +2,7 @@ from flask import Blueprint, render_template,request, redirect, url_for, flash, 
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 from jinja2 import TemplateNotFound
-from .models import Users
+from .models.Users import Users
 from string import punctuation
 from . import db
 

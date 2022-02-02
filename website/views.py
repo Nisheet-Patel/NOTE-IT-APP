@@ -1,13 +1,14 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
 from flask_login import login_required, current_user
 from jinja2 import TemplateNotFound
-from .models import Notes, Public_Notes, Users
+from .models import Notes, Public_Notes
 from . import db
-from secrets import token_urlsafe 
-import datetime
 
 views = Blueprint('views',__name__)
 __PUBLIC_NOTE_KEY__ = 20
+
+Notes = Notes.Notes
+Public_Notes = Public_Notes.Public_Notes
 
 @views.route('/')
 def home():
@@ -22,10 +23,10 @@ def notes():
 
     search_value = request.args.get('search-value')
     if search_value:
-        notes = db.session.query(Notes,Public_Notes).join(Public_Notes, Public_Notes.Id == Notes.note_id, isouter=True).filter(Notes.user_id == current_user.id).filter(Notes.title.contains(search_value) | Notes.body.contains(search_value)).order_by(Notes.update_date.desc())
+        notes = Notes.Search(search_value)
         return render_template('main-page.html', notes=notes, search_value=search_value)
 
-    notes = db.session.query(Notes,Public_Notes).join(Public_Notes, Public_Notes.Id == Notes.note_id, isouter=True).filter(Notes.user_id == current_user.id)
+    notes = Notes.All(current_user.id)
 
     return render_template('main-page.html', notes=notes)
 
@@ -35,7 +36,7 @@ def shared():
         flash("login to view Notes", "info")
         return redirect(url_for("auth.login_page"))
 
-    notes = db.session.query(Notes,Public_Notes).join(Public_Notes, Public_Notes.Id == Notes.note_id).filter(Notes.user_id == current_user.id)
+    notes = Public_Notes.All(current_user.id)
 
     return render_template('main-page.html', notes=notes, for_shared=True)
 
@@ -48,7 +49,7 @@ def note(noteid):
     note = Notes.query.get(noteid)
     if note.user_id == current_user.id:
         if note.is_public:
-            public_note_ = Public_Notes.query.filter_by(Id=noteid).first().slug
+            public_note_ = Public_Notes.Get_Slug(noteid)
         else:
             public_note_ = None
         return render_template('note-private.html',note=note, note_key=public_note_)
@@ -62,20 +63,12 @@ def add_note_page():
 
         is_public = 1 if request.form.get('is-public') == 'on' else 0
 
-        note = Notes(
-            title = request.form.get('note-title'),
-            body = request.form.get('note-body'),
-            is_public = is_public,
-            update_date = datetime.datetime.now().strftime("%d %m %Y %X"),
-            user_id = current_user.id
+        Notes.Add(
+            request.form.get('note-title'),
+            request.form.get('note-body'),
+            is_public,
+            current_user.id
         )
-        db.session.add(note)
-        db.session.commit()
-
-        if is_public:        
-            pnote = Public_Notes(Id=note.note_id, slug=token_urlsafe(__PUBLIC_NOTE_KEY__))
-            db.session.add(pnote)
-            db.session.commit()
 
         return redirect(url_for('views.notes'))
     else:
@@ -87,32 +80,19 @@ def edit_page_page(noteid):
     if request.method == 'POST':
         is_public = 1 if request.form.get('is-public') == 'on' else 0
 
-        note = Notes.query.get(noteid)
-        if note.user_id == current_user.id:
-            if is_public != note.is_public:
-                # Add
-                if is_public:
-                    pnote = Public_Notes(Id=note.note_id, slug=token_urlsafe(__PUBLIC_NOTE_KEY__))
-                    db.session.add(pnote)
-                    db.session.commit()
-                else:
-                    # remove
-                    pnote = Public_Notes.query.filter_by(Id=noteid).first()
-                    db.session.delete(pnote)
-                    db.session.commit()
+        note = Notes.Edit(
+            noteid, 
+            request.form.get('note-title'), request.form.get('note-body'), 
+            is_public, 
+            current_user.id
+            )
 
-            note.title = request.form.get('note-title')
-            note.body = request.form.get('note-body')
-            note.is_public = is_public
-            update_date = datetime.datetime.now().strftime("%d %m %Y %X")
-
-            db.session.commit()
-
+        if note:
             return redirect(url_for('views.notes') + f'/{note.note_id}')
         else:
             return abort(401)
     else:
-        note = Notes.query.get(noteid)
+        note = Notes.Get(noteid)
         if note.user_id == current_user.id:
             checked = "checked" if note.is_public else "unchecked"
             return render_template('edit-note.html', note=note, checked=checked)
@@ -122,15 +102,8 @@ def edit_page_page(noteid):
 @views.route('/delete/<noteid>')
 @login_required
 def delete_note(noteid):
-    note = Notes.query.get(noteid)
-    if note.user_id == current_user.id:
-        if note.is_public:
-            pnote = Public_Notes.query.filter_by(Id=noteid).first()
-            db.session.delete(pnote)
-            db.session.commit()
-        db.session.delete(note)
-        db.session.commit()
-
+    note = Notes.Delete(noteid, current_user.id)
+    if note:
         return redirect(url_for('views.notes'))
     else:
         return abort(404)
