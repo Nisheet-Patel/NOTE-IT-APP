@@ -1,21 +1,39 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
+from flask import Blueprint, render_template, request, redirect, url_for, flash, abort, session
 from flask_login import login_required, current_user
 from jinja2 import TemplateNotFound
 from .models import Notes, Public_Notes, Users
 from . import db
 from secrets import token_urlsafe 
-import datetime
+from datetime import datetime
+from pytz import timezone
+import requests
 
 views = Blueprint('views',__name__)
 __PUBLIC_NOTE_KEY__ = 20
+DATETIME_FORMAT = "%d %m %Y %I:%M:%S %p"
 
 @views.route('/')
 def home():
     return render_template('index.html')
-    
-    
+
+def set_timezone(ip):
+    if not session.get('timezone'):
+        tz = requests.get(f'http://ip-api.com/json/{ip}').json()
+
+        if tz['status'] == 'fail':
+            # set Default Timezone
+            session['timezone'] = 'Asia/Kolkata'
+            return False
+
+        # Set user Timezone
+        session['timezone'] = timezone(str(tz['timezone']))
+
+        return True
+
 @views.route('/notes')
 def notes():
+    set_timezone(request.remote_addr)
+
     if not current_user.is_authenticated:
         flash("login to view Notes", "info")
         return redirect(url_for("auth.login_page"))
@@ -66,7 +84,7 @@ def add_note_page():
             title = request.form.get('note-title'),
             body = request.form.get('note-body'),
             is_public = is_public,
-            update_date = datetime.datetime.now().strftime("%d %m %Y %X"),
+            update_date = datetime.now(timezone(session.get('timezone'))).strftime(DATETIME_FORMAT),
             user_id = current_user.id
         )
         db.session.add(note)
@@ -104,7 +122,7 @@ def edit_page_page(noteid):
             note.title = request.form.get('note-title')
             note.body = request.form.get('note-body')
             note.is_public = is_public
-            update_date = datetime.datetime.now().strftime("%d %m %Y %X")
+            note.update_date = datetime.now(timezone(session.get('timezone'))).strftime(DATETIME_FORMAT)
 
             db.session.commit()
 
