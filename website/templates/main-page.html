@@ -55,4 +55,15 @@
         {% endfor %}
 
     </div>
+
+    <script>
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey && String.fromCharCode(e.keyCode).toLowerCase() === 'n') {
+              e.preventDefault();
+              window.open("/add-note", "_self");
+              console.log("Hello There");
+            }
+          }, false);
+    </script>
+    
 {% endblock body %}
